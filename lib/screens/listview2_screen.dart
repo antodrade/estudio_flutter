@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class Listview2Screen extends StatelessWidget {
   final options = const [
     'Megaman',

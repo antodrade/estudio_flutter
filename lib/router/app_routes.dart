@@ -45,7 +45,7 @@ class AppRoutes {
 
     for (final option in menuOptions) {
       appRoutes.addAll({
-        'option.route': (BuildContext context) => option.screen,
+        option.route: (BuildContext context) => option.screen,
       });
     }
 
