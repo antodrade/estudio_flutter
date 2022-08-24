@@ -25,7 +25,7 @@ class CustomCardType1 extends StatelessWidget {
               TextButton(
                 onPressed: () {},
                 child: const Text('cancel'),
-                style: TextButton.styleFrom(primary: Colors.indigo),
+                // style: TextButton.styleFrom(primary: Colors.indigo),
               ),
               TextButton(onPressed: () {}, child: const Text('ok')),
             ],
