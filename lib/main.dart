@@ -1,4 +1,5 @@
 import 'package:fl_components/router/app_routes.dart';
+import 'package:fl_components/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_components/screens/screens.dart';
 
@@ -16,11 +17,7 @@ class MyApp extends StatelessWidget {
       initialRoute: AppRoutes.initialRoute,
       routes: AppRoutes.getAppRoutes(),
       onGenerateRoute: AppRoutes.onGenerateRoute,
-      theme: ThemeData.light().copyWith(
-          //Color primario
-          primaryColor: Colors.indigo,
-          //AppBar theme
-          appBarTheme: AppBarTheme(color: Colors.red)),
+      theme: AppTheme.ligthTheme,
     );
   }
 }
