@@ -1,19 +1,34 @@
+import 'package:fl_components/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomCardType2 extends StatelessWidget {
-  const CustomCardType2({super.key});
+  final String imageUrl;
+  final String? name;
+
+  const CustomCardType2({super.key, required this.imageUrl, this.name});
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 50,
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+      elevation: 30,
+      shadowColor: AppTheme.primary.withOpacity(0.5),
       child: Column(
-        children: const [
-          Image(
-            image: NetworkImage(
-                'https://media.istockphoto.com/photos/chanaral-island-at-chanaral-de-aceituno-in-atacama-desert-chile-is-an-picture-id1032683008?k=20&m=1032683008&s=612x612&w=0&h=KJiWwcDqdOPB_dpNXmU38-aZlWjkkAtiSvKUE4G_3Ac='),
-            //  placeholder: AssetImage('assets/jar-loading.gif'),
-          )
+        children: [
+          FadeInImage(
+            image: NetworkImage(imageUrl),
+            placeholder: const AssetImage('assets/jar-loading.gif'),
+            width: double.infinity,
+            height: 230,
+            fit: BoxFit.cover,
+            fadeInDuration: const Duration(milliseconds: 300),
+          ),
+          if (name != null)
+            Container(
+                alignment: AlignmentDirectional.centerEnd,
+                padding: const EdgeInsets.only(right: 20, top: 10, bottom: 10),
+                child: Text(name!))
         ],
       ),
     );
