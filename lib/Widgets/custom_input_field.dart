@@ -32,7 +32,7 @@ class CustomInputField extends StatelessWidget {
       textCapitalization: TextCapitalization.words,
       keyboardType: typeData,
       obscureText: isPassword,
-      onChanged: ( value ) => formValues[formProperty] = value,
+      onChanged: (value) => formValues[formProperty] = value,
       validator: (value) {
         if (value == null) return 'Este campo es requerido';
         return value.length < 3 ? 'Mínimo de 3 letras' : null;
